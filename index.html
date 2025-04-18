@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NovaScript</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>NovaScript Web App</h1>
+  <textarea id="code" placeholder="Write your Python code here..."></textarea>
+  <div id="buttons">
+    <button onclick="runCode()">Run</button>
+    <button onclick="clearOutput()">Clear</button>
+    <button onclick="downloadScript()">Save</button>
+    <input type="file" onchange="loadScript(event)" />
+  </div>
+  <pre id="output"></pre>
+
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
