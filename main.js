@@ -49,3 +49,7 @@ async function downloadJSONFile(filename) {
     alert("File not found: " + filename);
   }
 }
+function clearCode() {
+  const editor = document.getElementById("code");
+  editor.value = "";
+}
