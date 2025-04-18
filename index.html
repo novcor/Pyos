@@ -3,23 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NovaScript</title>
+  <title>PIOS – Python In One Space</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>NovaScript Web App</h1>
-  <textarea id="code" placeholder="Write your Python code here..."></textarea>
+  <h1>PIOS</h1>
+  <p id="tagline">Python In One Space – fast, clean, powerful.</p>
+
+  <div class="editor-container">
+    <textarea id="code" placeholder="Write your Python code here..."></textarea>
+  </div>
+
   <div id="buttons">
     <button onclick="runCode()">Run</button>
-    <button onclick="clearOutput()">Clear</button>
-    <button onclick="downloadScript()">Save</button>
+    <button onclick="clearOutput()">Clear Terminal</button>
+    <button onclick="clearCode()">Clear Code</button>
+    <button onclick="downloadScript()">Save Script</button>
+    <button onclick="downloadJSONFile('result.json')">Download result.json</button>
     <input type="file" onchange="loadScript(event)" />
   </div>
-  <pre id="output"></pre>
+
+  <pre id="output" placeholder="Output will appear here..."></pre>
 
   <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
-<button onclick="downloadJSONFile('result.json')">Download result.json</button>
-<button onclick="clearCode()">Clear Code</button>
