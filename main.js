@@ -34,3 +34,18 @@ function loadScript(event) {
   };
   reader.readAsText(file);
 }
+async function downloadJSONFile(filename) {
+  let pyodide = await pyodideReadyPromise;
+  const fs = pyodide.FS;
+
+  try {
+    const data = fs.readFile(filename, { encoding: "utf8" });
+    const blob = new Blob([data], { type: "application/json" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = filename;
+    a.click();
+  } catch (err) {
+    alert("File not found: " + filename);
+  }
+}
